@@ -1,0 +1,34 @@
+#************************************#
+# 书香之家去广告
+# hostname = chuangk.tv,4billion.tv
+^https?:\/\/conf\.chuangk.tv\/v4\/source\/site\.html url reject
+^https?:\/\/my\.chuangke\.tv\* url reject
+^https?:\/\/res\.chuangke\.tv\* url reject
+^https?:\/\/user\.jpush\.cn\/v1\/user\/ url reject
+^https?:\/\/app-measurement\.com\/* url reject
+^https?:\/\/conf\.chuangke\.tv\/v4/ad\/ios\/all\.html url reject
+^https?:\/\/conf\.4billion\.tv\* url reject
+^https?:\/\/my\.4billion\.tv\* url reject
+
+#************************************#
+# Emby(解锁播放权限)
+# hostname = mb3admin.com
+^https?:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey) url script-response-body https://raw.githubusercontent.com/wangrui1573/r_config/main/QX/js/embycrack.js
+
+#************************************#
+# 扫描全能王
+# hostname = *.camscanner.com, *.intsig.net
+^https?:\/\/.*\.(intsig\.net|camscanner\.com) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js
+
+#************************************#
+# 百度网盘，一刻相册 解锁部分功能
+# hostname = pan.baidu.com
+^https?:\/\/pan\.baidu\.com\/(youai\/(user\/.+\/getminfo|membership\/.+\/adswitch)|(rest\/.+\/membership\/user|act\/.+\/(bchannel|welfare)\/list|api\/usercfg)) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/bdcloud.js
+
+#************************************#
+# 阿里云盘 净化/解锁SVIP
+# hostname = *.aliyundrive.com, *.alipan.com
+^https?:\/\/(api|member)\.(aliyundrive|alipan)\.com\/(.+\/(users|activity|user\/get)|((business|apps)\/.+\/users|adrive\/.+\/user)) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js
+
+#************************************#
+hostname =  *.aliyundrive.com, *.alipan.com, pan.baidu.com, *.camscanner.com, *.intsig.net, mb3admin.com, *.4billion.tv, *.chuangke.tv, user.jpush.cn, app-measurement.com
